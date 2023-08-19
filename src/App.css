@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+ul > li {
+  list-style: none;
+}
+
+.nav-bar,
+.nav-menu {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../../redux/books/booksSlice';
+import Button from './Button';
 
 const Form = () => {
   const [title, setTitle] = useState('');
@@ -48,7 +49,7 @@ const Form = () => {
           placeholder="Enter the book description"
           required
         />
-        <button type="submit" className="submit-button">Add new Book</button>
+        <Button className="submit-button" event={() => null} label="Add new Book" />
       </form>
     </div>
   );

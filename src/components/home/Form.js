@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../../redux/books/booksSlice';
 import Button from './Button';
+import { addNewBook } from '../../redux/books/booksSlice';
 
 const Form = () => {
   const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('');
   const [author, setAuthor] = useState('');
   const dispatch = useDispatch();
 
@@ -14,15 +14,15 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newBook = {
-      id: getId(),
+      item_id: getId().toString(),
       title,
-      description,
       author,
+      category,
     };
-    dispatch(addBook(newBook));
+    dispatch(addNewBook(newBook));
     setTitle('');
-    setDescription('');
     setAuthor('');
+    setCategory('');
   };
 
   return (
@@ -44,9 +44,9 @@ const Form = () => {
           required
         />
         <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Enter the book description"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          placeholder="Enter the book category"
           required
         />
         <Button className="submit-button" event={() => null} label="Add new Book" />

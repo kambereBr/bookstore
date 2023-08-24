@@ -14,6 +14,7 @@ const Book = ({
       </div>
       <div>
         <span>{description}</span>
+        <br />
         <span>{author}</span>
       </div>
       <button type="button" className="delete-button" onClick={() => dispatch(removeBook(id))}>Delete</button>

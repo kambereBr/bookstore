@@ -6,7 +6,7 @@ const Categories = () => {
   const dispatch = useDispatch();
   const { categories } = useSelector((store) => store.categories);
   useEffect(() => {
-    dispadispatchtch(checkStatus());
+    dispatch(checkStatus());
   }, [categories]);
   return (
     <div>{categories}</div>

@@ -32,7 +32,7 @@ export const addNewBook = createAsyncThunk('book/addNewBook',
           'Content-type': 'application/json; charset=UTF-8',
         },
       });
-      return { message: resp, book: newBook };
+      return JSON.stringify({ message: resp, book: newBook });
     } catch (error) {
       return thunkAPI.rejectWithValue('Oooops, something went wrong');
     }
@@ -49,7 +49,7 @@ export const deleteBook = createAsyncThunk('book/deleteBook',
           'Content-type': 'application/json; charset=UTF-8',
         },
       });
-      return { message: resp, id };
+      return JSON.stringify({ message: resp, item_id: id });
     } catch (error) {
       return thunkAPI.rejectWithValue('Oooops, something went wrong');
     }
@@ -70,8 +70,9 @@ const booksSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(deleteBook.fulfilled, (state, action) => {
+        const payload = JSON.parse(action.payload);
         state.books = Object.keys(state.books)
-          .filter((key) => key !== action.payload.item_id)
+          .filter((key) => key !== payload.item_id)
           .reduce((val, key) => ({ ...val, [key]: state.books[key] }), {});
       })
       .addCase(fetchBooks.pending, (state) => {
@@ -86,12 +87,13 @@ const booksSlice = createSlice({
         state.error = action.payload;
       })
       .addCase(addNewBook.fulfilled, (state, action) => {
+        const payload = JSON.parse(action.payload);
         const newBook = {
-          title: action.payload.book.title,
-          author: action.payload.book.author,
-          category: action.payload.book.category,
+          title: payload.book.title,
+          author: payload.book.author,
+          category: payload.book.category,
         };
-        const key = action.payload.book.item_id;
+        const key = payload.book.item_id;
         state.books = {
           ...state.books,
           [key]: [newBook],

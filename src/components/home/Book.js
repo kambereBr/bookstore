@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteBook, fetchBooks } from '../../redux/books/booksSlice';
+import { deleteBook } from '../../redux/books/booksSlice';
 import Button from './Button';
 
 const Book = ({
@@ -11,7 +11,6 @@ const Book = ({
 
   const delBook = (id) => {
     dispatch(deleteBook(id));
-    dispatch(fetchBooks());
   };
 
   return (

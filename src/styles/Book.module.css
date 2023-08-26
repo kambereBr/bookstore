@@ -41,6 +41,7 @@
 .section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 2rem 0.7rem;
   padding-right: 7rem;
   background-color: var(--light);

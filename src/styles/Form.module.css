@@ -4,6 +4,7 @@
   --grey-dark: #e8e8e8;
   --dark-one: #121212;
   --blue-sky: #0290ff;
+  --very-light-pink: #c4c4c4;
 }
 
 .formContainer {
@@ -15,6 +16,8 @@ hr {
   background: var(--grey-dark);
   height: 3px;
   border: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 h1 {
@@ -39,7 +42,13 @@ input {
   background-color: var(--light);
   font-size: 1rem;
   letter-spacing: -0.15px;
-  color: var(--dark-one);
+  color: var(--very-light-pink);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  height: 1.188rem;
+  width: 4.75rem;
 }
 
 input::placeholder {

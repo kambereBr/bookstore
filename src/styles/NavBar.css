@@ -1,0 +1,91 @@
+:root {
+  --secondary-color: #f4f4f4;
+  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+  --gray-color: #6e6e75;
+  --white-two: #fff;
+  --Montserrat: #0290ff;
+  --black-two: #121212;
+  --white-three: #e8e8e8;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0 var(--white-two) solid;
+  height: 5.938rem;
+  background-color: var(--white-two);
+  width: 100%;
+}
+
+.nav-bar,
+.nav-menu {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding-left: 0;
+}
+
+.nav-bar-left-content {
+  display: flex;
+  vertical-align: middle;
+}
+
+ul > li {
+  list-style: none;
+  padding-left: 35px;
+}
+
+.list-book-item,
+.list-category-item {
+  padding-top: 12px !important;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.books {
+  width: 3.688rem;
+  height: 1rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: var(--black-two);
+}
+
+.categories {
+  width: 6.563rem;
+  height: 1rem;
+  margin: 1.125rem 41.5rem 0.688rem 2.563rem;
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: var(--black-two);
+}
+
+.logo {
+  width: 15rem;
+  height: 2.313rem;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--Montserrat);
+}
+
+.icon {
+  width: 30px;
+  cursor: pointer;
+}

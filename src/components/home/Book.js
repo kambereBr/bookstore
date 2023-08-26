@@ -18,6 +18,10 @@ const Book = ({
   const chapters = ['Chapter 17', 'Chapter 3: A Lesson Learned', 'Chapter 18', 'Introduction', 'Chapter 9'];
   const chapter = chapters[Math.floor(Math.random() * chapters.length)];
 
+  const myStyle = {
+    fontStyle: 'normal',
+  };
+
   return (
     <div className={styles.bookItem}>
       <section className={styles.section}>
@@ -36,7 +40,7 @@ const Book = ({
               </li>
               <span className={styles.lilLine} />
               <li className={styles.actionLi}>
-                <Button className={`delete-button ${styles.actionButtons}`} event={() => delBook(id)} label="Remove" />
+                <Button className={`delete-button ${styles.actionButtons}`} style={myStyle} event={() => delBook(id)} label="Remove" />
               </li>
               <span className={styles.lilLine} />
               <li className={styles.actionLi}>

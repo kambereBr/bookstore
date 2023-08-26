@@ -9,7 +9,7 @@ const BookList = () => {
   useEffect(() => {
     dispatch(fetchBooks());
   },
-  []);
+  [dispatch]);
   const { books } = useSelector((store) => store.books);
   return (
     <div>
